@@ -1,0 +1,28 @@
+{
+  "id": "oompaloompapirates_flint", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+  "name": "OompaLoompaPirates", # Displayed to the player
+  "author": "Flint",
+  "utility": false,
+  "version": { "major": '1', "minor": '0', "patch": '0' },
+  "description": "OompaLoompaPiratesTest",
+  "gameVersion": "0.98a-RC5",
+  "jars": [ "jars/OompaLoompaPirates.jar" ],
+  "modPlugin": "flint.olp.olp_plugin",
+  "dependencies": [
+   # {
+   #     "id": "lw_lazylib",
+   #     "name": "LazyLib", # Optional (recommended)
+   #     #"version": "2.7b" # Optional
+   # },
+   # {
+   #     "id": "MagicLib",
+   #     "name": "MagicLib", # Optional (recommended)
+   #     #"version": "0.34" # Optional
+   # },
+   # {
+   #     "id": "shaderLib",
+   #     "name": "GraphicsLib", # Optional (recommended)
+   #     #"version": "1.5.1" # Optional
+   # }
+  ],
+}
