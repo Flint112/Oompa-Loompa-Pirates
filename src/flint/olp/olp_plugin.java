@@ -8,16 +8,9 @@ public class olp_plugin extends BaseModPlugin {
 
     @Override
     public void onNewGame() {
-        super.onNewGame();
-        // Add your code here, or delete this method (it does nothing unless you add code)
-
-        // The code below requires that Nexerelin is added as a library (not a dependency, it's only needed to compile the mod).
-        boolean isNexerelinEnabled = Global.getSettings().getModManager().isModEnabled("nexerelin");
-
-        if (!isNexerelinEnabled || SectorManager.getManager().isCorvusMode()) {
+        boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+        if (!haveNexerelin || !Global.getSector().getMemoryWithoutUpdate().getBoolean("$nex_randomSector"))
             new olp_gen().generate(Global.getSector());
-        }
-
         // You can add more methods from ModPlugin here. Press Control-O in IntelliJ to see options.
     }
 }

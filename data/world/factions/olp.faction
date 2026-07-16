@@ -1,5 +1,5 @@
 {
-	"id":"oompaloompas",
+	"id":"olp",
 	"color":[255,0,0,255],
 	
 	"baseUIColor":[200,0,0,255],
@@ -9,8 +9,8 @@
 	
 	"entityNamePrefix":"Oompa Loompa",
 	"personNamePrefix":"Oompa Loompa",
-	"displayName":"Oompa Loompa",
-	"displayNameWithArticle":"The Loompas",
+	"displayName":"Oompa Loompa Pirates",
+	"displayNameWithArticle":"The Oompa Loompas",
 	"displayNameIsOrAre":"are",
 	"logo":"graphics/factions/oompaloompas.png",
 	"crest":"graphics/factions/crest_oompaloompas.png",

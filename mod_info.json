@@ -4,8 +4,8 @@
   "author": "Flint",
   "utility": false,
   "version": { "major": '0', "minor": '0', "patch": '2' },
-  "description": "OompaLoompaPiratesTest",
-  "gameVersion": "0.98a-RC5",
+  "description": "Adds a certain short-grown faction into the game as pirates. Courtesy of your favourite neighbourhood Scotsman.",
+  "gameVersion": "0.98a-RC8",
   "jars": [ "jars/OompaLoompaPirates.jar" ],
   "modPlugin": "flint.olp.olp_plugin",
   "dependencies": [

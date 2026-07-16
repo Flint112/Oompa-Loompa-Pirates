@@ -1,57 +1,55 @@
 package flint.olp.world.systems;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.PlanetAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import java.util.ArrayList;
-import java.util.List;
 
-public class addMarketplace{
+public class olp_market {
 
     public static MarketAPI addMarketplace(String factionID, SectorEntityToken primaryEntity, ArrayList<SectorEntityToken> connectedEntities, String name,
                                            int size, ArrayList<String> marketConditions, ArrayList<String> Industries, ArrayList<String> submarkets, float tariff) {
         EconomyAPI globalEconomy = Global.getSector().getEconomy();
-        String Loompaland = primaryEntity.getId();
-        String LoompalandmarketID = Loompaland;
+        String planetID = primaryEntity.getId();
+        String marketID = planetID;
 
-        MarketAPI Loompalandmarket = Global.getFactory().createMarket(LoompalandmarketID, name, size);
-        Loompalandmarket.setFactionId(factionID);
-        Loompalandmarket.setPrimaryEntity(primaryEntity);
-        Loompalandmarket.getTariff().modifyFlat("generator", tariff);
+        MarketAPI newMarket = Global.getFactory().createMarket(marketID, name, size);
+        newMarket.setFactionId(factionID);
+        newMarket.setPrimaryEntity(primaryEntity);
+        newMarket.getTariff().modifyFlat("generator", tariff);
 
         if (null != submarkets){
             for (String market : submarkets){
-                Loompalandmarket.addSubmarket(market);
+                newMarket.addSubmarket(market);
             }
         }
 
         for (String condition : marketConditions) {
-            Loompalandmarket.addCondition(condition);
+            newMarket.addCondition(condition);
         }
 
         for (String industry : Industries) {
-            Loompalandmarket.addIndustry(industry);
+            newMarket.addIndustry(industry);
         }
 
         if (null != connectedEntities) {
             for (SectorEntityToken entity : connectedEntities) {
-                Loompalandmarket.getConnectedEntities().add(entity);
+                newMarket.getConnectedEntities().add(entity);
             }
         }
 
-        globalEconomy.addMarket(Loompalandmarket, true);
-        primaryEntity.setMarket(Loompalandmarket);
-        primaryEntity.setFaction("oompaloompapirates");
+        globalEconomy.addMarket(newMarket, true);
+        primaryEntity.setMarket(newMarket);
+        primaryEntity.setFaction(factionID);
 
         if (null != connectedEntities) {
             for (SectorEntityToken entity : connectedEntities) {
-                entity.setMarket(Loompalandmarket);
-                entity.setFaction("oompaloompapirates");
+                entity.setMarket(newMarket);
+                entity.setFaction(factionID);
             }
         }
 
-        return Loompalandmarket;
+        return newMarket;
     }
 }
