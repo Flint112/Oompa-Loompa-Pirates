@@ -3,7 +3,7 @@
   "name": "OompaLoompaPirates", # Displayed to the player
   "author": "Flint",
   "utility": false,
-  "version": { "major": '1', "minor": '0', "patch": '0' },
+  "version": { "major": '0', "minor": '0', "patch": '2' },
   "description": "OompaLoompaPiratesTest",
   "gameVersion": "0.98a-RC5",
   "jars": [ "jars/OompaLoompaPirates.jar" ],

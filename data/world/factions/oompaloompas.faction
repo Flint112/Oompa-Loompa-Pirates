@@ -164,7 +164,7 @@
 			"graphics/portraits/portrait_ol08.png",
 			"graphics/portraits/portrait_ol09.png",
 		],
-		"standard_female[
+		"standard_female":[
 			"graphics/portraits/portrait_ol05.png",
 		],
 	},
