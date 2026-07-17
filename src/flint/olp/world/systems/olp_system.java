@@ -40,8 +40,36 @@ public class olp_system {
                 900, //angle
                 130f, //radius
                 planet1Dist, //distance from star
-                700f); //how many days to orbit
+                365f); //how many days to orbit
         Loompaland.setCustomDescriptionId("Loompaland"); //for custom descriptions
+
+        PlanetAPI little_loompa = system.addPlanet("Little Loompa",
+                Loompaland, //what it's orbiting
+                "Little Loompa", //name
+                "barren", //the planet type (look in planets.json for more)
+                500, //angle
+                40f, //radius
+                planet1Dist, //distance from star
+                1f); //how many days to orbit
+        little_loompa.setCustomDescriptionId("The moon of Loompaland"); //for custom descriptions
+
+        PlanetAPI Glorp = system.addPlanet("Glorp",
+                olp_system_star,
+                "Glorp",
+                "ice_giant",
+                900,
+                500f,
+                planet1Dist,
+                500f);
+
+        PlanetAPI Whizzlesnax = system.addPlanet("Whizzlesnax",
+                Glorp,
+                "Whizzlesnax",
+                "toxic_cold",
+                300,
+                100f,
+                planet1Dist,
+                2137f);
 
         system.autogenerateHyperspaceJumpPoints(true, true); //generates jump points
 
@@ -55,23 +83,33 @@ public class olp_system {
         MarketAPI Loompaland_market = olp_market.addMarketplace("olp", Loompaland,
                 null, //connected entities, like stations
                 "Loompaland",
-                5, //size
+                10, //size
                 new ArrayList<>(Arrays.asList( //these are conditions
-                        Conditions.POPULATION_5,
-                        Conditions.TECTONIC_ACTIVITY,
+                        Conditions.POPULATION_10,
+                        Conditions.FARMLAND_RICH,
                         Conditions.ORE_RICH,
-                        Conditions.HABITABLE
+                        Conditions.HABITABLE,
+                        Conditions.REGIONAL_CAPITAL,
+                        Conditions.WATER,
+                        Conditions.JUNGLE,
+                        Conditions.COMM_RELAY
                 )),
                 new ArrayList<>(Arrays.asList( //industries
                         Industries.POPULATION,
-                        Industries.SPACEPORT,
+                        Industries.MEGAPORT,
                         Industries.ORBITALSTATION,
-                        Industries.MINING
+                        Industries.MINING,
+                        Industries.HEAVYBATTERIES,
+                        Industries.WAYSTATION,
+                        Industries.FARMING,
+                        Industries.PATROLHQ,
+                        Industries.HIGHCOMMAND
 
                 )),
                 new ArrayList<>(Arrays.asList(Submarkets.SUBMARKET_STORAGE, //aaand markets
                         Submarkets.GENERIC_MILITARY,
                         Submarkets.SUBMARKET_BLACK,
+                        Submarkets.LOCAL_RESOURCES,
                         Submarkets.SUBMARKET_OPEN)),
                 0.15f
         );
