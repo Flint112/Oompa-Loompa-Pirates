@@ -38,29 +38,29 @@ public class olp_system {
                 "Loompaland", //name
                 "jungle", //the planet type (look in planets.json for more)
                 900, //angle
-                130f, //radius
-                planet1Dist, //distance from star
-                365f); //how many days to orbit
+                130, //radius
+                planet1Dist, //distance from star/planet
+                365); //how many days to orbit
         Loompaland.setCustomDescriptionId("Loompaland"); //for custom descriptions
 
         PlanetAPI little_loompa = system.addPlanet("Little Loompa",
-                Loompaland, //what it's orbiting
-                "Little Loompa", //name
-                "barren", //the planet type (look in planets.json for more)
-                500, //angle
-                40f, //radius
-                planet1Dist, //distance from star
-                1f); //how many days to orbit
+                Loompaland,
+                "Little Loompa",
+                "barren",
+                90,
+                40,
+                300,
+                5);
         little_loompa.setCustomDescriptionId("The moon of Loompaland"); //for custom descriptions
 
         PlanetAPI Glorp = system.addPlanet("Glorp",
                 olp_system_star,
                 "Glorp",
                 "ice_giant",
-                900,
-                500f,
-                planet1Dist,
-                500f);
+                300,
+                500,
+                4000,
+                500);
 
         PlanetAPI Whizzlesnax = system.addPlanet("Whizzlesnax",
                 Glorp,
@@ -68,8 +68,8 @@ public class olp_system {
                 "toxic_cold",
                 300,
                 100f,
-                planet1Dist,
-                2137f);
+                1500,
+                300);
 
         system.autogenerateHyperspaceJumpPoints(true, true); //generates jump points
 
