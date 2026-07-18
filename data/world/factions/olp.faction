@@ -25,13 +25,7 @@
 		"GENERAL":1,
 	},
 	"names":{
-		"fringe":1,
-		"modern":1,
-		"world":1,
-		"future":1,
-		"myth":1,
-		"old english":1,
-		"pirate":1,
+		"oompaloompa":1,
 	},
 	# variantOverrides restricts hulls to listed variants and adjusts their probability
 	"variantOverrides":{
